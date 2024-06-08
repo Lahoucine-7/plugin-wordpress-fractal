@@ -1,8 +1,10 @@
 <div>
+    <!-- Container for the fractal canvas -->
     <div id="fractalContainer">
         <canvas id="fractalCanvas" height="400px" width="400px"></canvas>
     </div>
 
+    <!-- Control panel for fractal settings -->
     <div class="controls">
         <label for="fractalType">Liste de fractales :</label>
         <select id="fractalType">
@@ -12,6 +14,8 @@
             <option value="3">Magnet Fractal</option>
             <option value="4">Personnalisé</option>
         </select>
+
+        <!-- Custom parameters for the "Personnalisé" fractal type -->
         <div id="customParams" style="display:none;">
             <label for="zSlider">Z: <span id="zValue">0</span></label>
             <input type="range" id="zSlider" min="-1" max="1" step="0.001" value="0">
@@ -20,7 +24,11 @@
             <input type="range" id="cSlider" min="-1" max="1" step="0.001" value="0">
         </div>
         <br>
+
+        <!-- Reset button to reset the fractal view -->
         <button id="resetButton">Réinitialiser</button>
+
+        <!-- Color scheme selection -->
         <div id="colors">
             <label for="colorSchemes">Choix de couleur :</label>
             <div id="colorSchemes">
@@ -33,6 +41,8 @@
                 <button class="color-btn" data-color-scheme="6" style="background: linear-gradient(to right, #A1BE95, #F98866, #A1BE95);">Pastel Olive Green & Salmon Pink</button>
                 <button id="customColorBtn" style="background: linear-gradient(to right, #000000, #FFFFFF);">Personnalisé</button>
             </div>
+
+            <!-- Custom color parameters for the "Personnalisé" color scheme -->
             <div id="customColorParams" style="display:none;">
                 <label for="color1Slider">Couleur 1: <span id="color1Value">#000000</span></label>
                 <input type="color" id="color1Slider" value="#000000">
@@ -42,6 +52,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal for displaying instructions -->
     <div id="modal" class="modal">
         <div class="modal-content">
             <h2>Instructions</h2>
@@ -57,5 +69,6 @@
         </div>
     </div>
 
+    <!-- Include the main JavaScript file as a module -->
     <script type="module" src="<?php echo plugin_dir_url(__FILE__) . '../assets/main.js'; ?>"></script>
 </div>
